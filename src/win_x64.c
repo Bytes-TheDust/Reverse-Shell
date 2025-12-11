@@ -6,7 +6,8 @@
 #define PORT 
 #pragma comment(lib, "ws2_32")
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
    WSADATA wsaData;
    SOCKET sock;
    struct sockaddr_in server;
